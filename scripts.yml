@@ -1,0 +1,23 @@
+# `allow` can be a list of boolean flags
+allow:
+  - net
+  - read
+  - env
+env:
+  PORT: 8081
+
+scripts:
+  docs: google-chrome https://doc.deno.land/https/github.com/denoland/deno/releases/latest/download/lib.deno.d.ts
+  start:
+    cmd: server.ts
+  echo: deno run echo.ts
+  dev:
+    cmd: deno run server.ts
+    tsconfig: tsconfig.json
+    inspect: 127.0.0.1:9229
+    log: debug # debug or info
+  parallel:
+    - deno run three.ts
+    - pll:
+        - deno run one.ts
+        - deno run two.ts
