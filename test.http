@@ -1,4 +1,4 @@
-GET 127.0.0.1:8080
+GET http://localhost:8080/ping
 Content-Type: application/json
 
 {

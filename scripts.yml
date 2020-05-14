@@ -10,12 +10,12 @@ scripts:
   docs: google-chrome https://doc.deno.land/https/github.com/denoland/deno/releases/latest/download/lib.deno.d.ts
   start:
     cmd: server.ts
-  echo: deno run echo.ts
-  dev:
-    cmd: deno run server.ts
-    tsconfig: tsconfig.json
-    inspect: 127.0.0.1:9229
-    log: debug # debug or info
+  dev: server.ts
+    # tsconfig: tsconfig.json
+    # inspect: 127.0.0.1:9229
+    # log: debug # debug or info
+  bundle: deno bundle server.ts > bundle.js
+  format: deno fmt server.ts
   parallel:
     - deno run three.ts
     - pll:
